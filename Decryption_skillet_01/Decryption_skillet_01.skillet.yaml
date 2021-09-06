@@ -1,11 +1,19 @@
 name: Decryption_skillet_01
+
 label: New Skillet
+
 description: Skillet Generated from uploaded configs
+
 type: panorama
+
 labels:
-    collection: Unknown
+
+    collection: decryption policies
+
 variables: []
+
 snippets:
+
 -   name: entry-567498
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -51,6 +59,8 @@ snippets:
             <member>No Decryption</member>
           </tag>
         </entry>
+    cmd: set
+
 -   name: entry-815925
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -94,6 +104,8 @@ snippets:
           <log-setting>Default Logging Profile</log-setting>
           <description>No Decrypt Rule by IPv4 IP Address for PanoOS and Panorama.</description>
         </entry>
+    cmd: set
+
 -   name: entry-498473
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -137,6 +149,8 @@ snippets:
             <member>any</member>
           </destination-hip>
         </entry>
+    cmd: set
+
 -   name: entry-581457
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -181,6 +195,8 @@ snippets:
             <member>any</member>
           </destination-hip>
         </entry>
+    cmd: set
+
 -   name: entry-883578
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -218,6 +234,8 @@ snippets:
           <description>SSH Proxy rule from Private to DaaS on the Linux Utility.</description>
           <disabled>no</disabled>
         </entry>
+    cmd: set
+
 -   name: entry-316844
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -262,6 +280,8 @@ snippets:
           </destination-hip>
           <log-setting>Default Logging Profile</log-setting>
         </entry>
+    cmd: set
+
 -   name: entry-605191
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -305,6 +325,8 @@ snippets:
             <member>any</member>
           </destination-hip>
         </entry>
+    cmd: set
+
 -   name: entry-780351
     xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
     element: |-
@@ -349,3 +371,5 @@ snippets:
           </destination-hip>
           <log-setting>Default Logging Profile</log-setting>
         </entry>
+    cmd: set
+
