@@ -1,0 +1,351 @@
+name: Decryption_skillet_01
+label: New Skillet
+description: Skillet Generated from uploaded configs
+type: panorama
+labels:
+    collection: Unknown
+variables: []
+snippets:
+-   name: entry-567498
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="No Decrypt">
+          <category>
+            <member>Custom Decryption Exceptions</member>
+            <member>financial-services</member>
+            <member>government</member>
+            <member>health-and-medicine</member>
+            <member>shopping</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-forward-proxy/>
+          </type>
+          <from>
+            <member>any</member>
+          </from>
+          <to>
+            <member>any</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>any</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <action>no-decrypt</action>
+          <profile>default</profile>
+          <description>Do Not Decrypt rule.</description>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+          <tag>
+            <member>No Decryption</member>
+          </tag>
+        </entry>
+-   name: entry-815925
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="No Decrypt PanOS and Panorama">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-forward-proxy/>
+          </type>
+          <from>
+            <member>any</member>
+          </from>
+          <to>
+            <member>any</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>Outside GlobalProtect Portal</member>
+            <member>Panorama pan-panorama</member>
+            <member>PanOS pan-vm50</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+          <tag>
+            <member>No Decryption</member>
+          </tag>
+          <action>no-decrypt</action>
+          <log-setting>Default Logging Profile</log-setting>
+          <description>No Decrypt Rule by IPv4 IP Address for PanoOS and Panorama.</description>
+        </entry>
+-   name: entry-498473
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="Monitor OwnCloud Public">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-inbound-inspection>Demo in a Box Wildcard</ssl-inbound-inspection>
+          </type>
+          <from>
+            <member>Public</member>
+          </from>
+          <to>
+            <member>DAAS</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>Outside OwnCloud Address</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <tag>
+            <member>Inbound</member>
+            <member>Decryption</member>
+          </tag>
+          <action>decrypt</action>
+          <profile>Inbound</profile>
+          <description>Decryption for the Wildcard demoinabox.net certificate.</description>
+          <disabled>yes</disabled>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+        </entry>
+-   name: entry-581457
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="Inbound Linux-Utility">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-inbound-inspection>Demo in a Box Wildcard</ssl-inbound-inspection>
+          </type>
+          <from>
+            <member>any</member>
+          </from>
+          <to>
+            <member>Public</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>Inside Linux Utility</member>
+            <member>Outside Linux Utility</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <tag>
+            <member>Inbound</member>
+            <member>Decryption</member>
+          </tag>
+          <action>decrypt</action>
+          <profile>Demo in a Box Default</profile>
+          <description>SSL Decrypt for Management Interface.</description>
+          <disabled>no</disabled>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+        </entry>
+-   name: entry-883578
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="SSH Inspection Linux Utility">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>Services on TCP 22</member>
+          </service>
+          <type>
+            <ssh-proxy/>
+          </type>
+          <from>
+            <member>Users</member>
+          </from>
+          <to>
+            <member>DAAS</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>Inside Linux Utility</member>
+          </destination>
+          <source-user>
+            <member>cn=domain users,cn=users,dc=demoinabox,dc=net</member>
+          </source-user>
+          <tag>
+            <member>Outbound</member>
+            <member>Decryption</member>
+          </tag>
+          <action>decrypt</action>
+          <profile>default</profile>
+          <description>SSH Proxy rule from Private to DaaS on the Linux Utility.</description>
+          <disabled>no</disabled>
+        </entry>
+-   name: entry-316844
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="Outbound Decryption for Users">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-forward-proxy/>
+          </type>
+          <from>
+            <member>Users</member>
+          </from>
+          <to>
+            <member>Public</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>any</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <tag>
+            <member>Outbound</member>
+            <member>Decryption</member>
+          </tag>
+          <action>decrypt</action>
+          <profile>Demo in a Box Default</profile>
+          <description>Users egressing from the Private Zone.</description>
+          <disabled>no</disabled>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+          <log-setting>Default Logging Profile</log-setting>
+        </entry>
+-   name: entry-605191
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="Outbound Decryption for DAAS">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-forward-proxy/>
+          </type>
+          <from>
+            <member>DAAS</member>
+          </from>
+          <to>
+            <member>Public</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>any</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <tag>
+            <member>Outbound</member>
+            <member>Decryption</member>
+          </tag>
+          <action>decrypt</action>
+          <profile>Demo in a Box Default</profile>
+          <description>Servers egressing from the DAAS Zone.</description>
+          <disabled>no</disabled>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+        </entry>
+-   name: entry-780351
+    xpath: /config/devices/entry[@name="localhost.localdomain"]/device-group/entry[@name="DG1"]/pre-rulebase/decryption/rules
+    element: |-
+        <entry name="Outbound Users to DAAS">
+          <category>
+            <member>any</member>
+          </category>
+          <service>
+            <member>any</member>
+          </service>
+          <type>
+            <ssl-forward-proxy/>
+          </type>
+          <from>
+            <member>Users</member>
+          </from>
+          <to>
+            <member>DAAS</member>
+          </to>
+          <source>
+            <member>any</member>
+          </source>
+          <destination>
+            <member>any</member>
+          </destination>
+          <source-user>
+            <member>any</member>
+          </source-user>
+          <tag>
+            <member>Outbound</member>
+            <member>Decryption</member>
+          </tag>
+          <action>decrypt</action>
+          <profile>Demo in a Box Default</profile>
+          <description>Servers egressing from the DaaS Zone.</description>
+          <disabled>no</disabled>
+          <source-hip>
+            <member>any</member>
+          </source-hip>
+          <destination-hip>
+            <member>any</member>
+          </destination-hip>
+          <log-setting>Default Logging Profile</log-setting>
+        </entry>
